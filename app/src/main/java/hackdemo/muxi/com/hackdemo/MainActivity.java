@@ -1,10 +1,13 @@
 package hackdemo.muxi.com.hackdemo;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -47,6 +50,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu,menu);
+        return true;
+    }
+
+    @Override
     public void onClick(View view) {
         if(view.getId() == mPagar.getId()){
             makePayment();
@@ -82,7 +91,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onPayment(PWPSTransactionStatus transactionStatus) {
         Log.d("PAYMENT",transactionStatus.toString());
         Toast.makeText(this,transactionStatus.toString(),Toast.LENGTH_LONG).show();
+        if(transactionStatus.getTransactionFinishedStatus() == PWPSTransactionStatus.TransactionFinishedStatus.SUCCESS)
+        {
+            saveTransaction();
+        }
+    }
 
+    public void saveTransaction()
+    {
+        //SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        //sharedPreferences.edit()
     }
 
     @Override
