@@ -103,11 +103,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onPayment(PWPSTransactionStatus transactionStatus) {
         Log.d("PAYMENT",transactionStatus.toString());
-        Toast.makeText(this,transactionStatus.toString(),Toast.LENGTH_LONG).show();
-        if(transactionStatus.getTransactionFinishedStatus() == PWPSTransactionStatus.TransactionFinishedStatus.SUCCESS)
-        {
+
+        if(transactionStatus.getTransactionFinishedStatus() == PWPSTransactionStatus.TransactionFinishedStatus.SUCCESS) {
             saveTransaction();
         }
+        showTrxMessage(transactionStatus.getTransactionFinishedStatus());
+    }
+
+    private void showTrxMessage(PWPSTransactionStatus.TransactionFinishedStatus transactionFinishedStatus) {
+        String toastText = "";
+        switch(transactionFinishedStatus){
+            case SUCCESS:{
+                toastText = "Transação Aprovada.";
+                break;
+            }
+            case ERROR:{
+                toastText = "Transação Aprovada.";
+                break;
+            }
+            case DENIED:{
+                toastText = "Erro na transação. Tente novamente.";
+                break;
+            }
+            default:{
+                toastText= "Resultado desconhecido.";
+            }
+        }
+
+        Toast.makeText(this,toastText,Toast.LENGTH_LONG).show();
+
     }
 
     public void saveTransaction()
@@ -141,7 +165,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onCancelOperation(String message) {
-
+        Log.d("PAYMENT","CANCELLED");
+        Toast.makeText(this,"PAYMENT CANCELLED",Toast.LENGTH_LONG).show();
     }
 
 }

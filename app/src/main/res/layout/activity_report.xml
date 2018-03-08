@@ -13,16 +13,20 @@
         android:text="QUANTITY"
         android:textSize="@dimen/mainText"
         android:layout_marginTop="@dimen/marginTop"
-        android:layout_marginStart="@dimen/marginLeft"
+        android:layout_marginLeft="@dimen/marginLeft"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
     />
     <TextView
         android:id="@+id/tv_totals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TOTALS"
-        app:layout_constraintTop_toBottomOf="@+id/tv_num_trx"
         android:textSize="@dimen/mainText"
-        android:layout_marginStart="@dimen/marginLeft"
+        android:layout_marginLeft="@dimen/marginLeft"
+        android:layout_marginTop="@dimen/marginTop"
+        app:layout_constraintTop_toBottomOf="@+id/tv_num_trx"
+        app:layout_constraintLeft_toLeftOf="parent"
     />
 
 </android.support.constraint.ConstraintLayout>

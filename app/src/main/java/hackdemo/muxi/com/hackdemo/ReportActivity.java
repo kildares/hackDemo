@@ -38,7 +38,7 @@ public class ReportActivity extends AppCompatActivity {
                     (totals.length() == 2) ? "0." + totals  :
                     totals.substring(0,totals.length()-2) + "." + totals.substring(totals.length() - 2);
 
-        mQuantity.setText("Number of approved transactions: " + number);
-        mTotals.setText("Approved Transactions totals: " + totals);
+        mQuantity.setText(getString(R.string.transacoes_num) +" "+ number);
+        mTotals.setText(getString(R.string.transacoes_soma) + " " + totals);
     }
 }
