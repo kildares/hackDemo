@@ -9,4 +9,7 @@
     <string name="login_hint">Insira aqui seu código de 8 dígitos</string>
     <string name="login_button">Acessar</string>
     <string name="menu_report">Relatórios</string>
+
+    <string name="key_approved_totals">key_approved</string>
+    <string name="key_approved_number">key_number</string>
 </resources>

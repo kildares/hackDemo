@@ -6,4 +6,19 @@
     android:layout_height="match_parent"
     tools:context="hackdemo.muxi.com.hackdemo.ReportActivity">
 
+    <TextView
+        android:id="@+id/tv_num_trx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/mainText"
+        android:layout_marginTop="@dimen/marginTop"
+    />
+    <TextView
+        android:id="@+id/tv_totals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_num_trx"
+        android:textSize="@dimen/mainText"
+    />
+
 </android.support.constraint.ConstraintLayout>
