@@ -14,4 +14,12 @@
 
     <string name="key_approved_totals">key_approved</string>
     <string name="key_approved_number">key_number</string>
+
+    <string name="trx_approved">Transação Aprovada.</string>
+    <string name="trx_denied">Transação recusada.</string>
+    <string name="trx_error">Erro na transação. Tente novamente.</string>
+    <string name="trx_default">Resultado desconhecido.</string>
+    <string name="err_no_name">Insira o nome do produto</string>
+    <string name="err_no_val">Insira o valor do produto</string>
+    <string name="err_val_zero">Insira um valor diferente de zero</string>
 </resources>

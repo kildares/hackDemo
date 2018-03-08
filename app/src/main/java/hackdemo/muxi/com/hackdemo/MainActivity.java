@@ -77,14 +77,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         String nome = mProduto.getText().toString();
         String valor = mValor.getText().toString();
+
         if(nome.isEmpty()){
-            Toast.makeText(this,"Insira o nome do produto",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,getString(R.string.err_no_name), Toast.LENGTH_LONG).show();
         }
         else if(valor.isEmpty()){
-            Toast.makeText(this,"Insira o valor do produto",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,getString(R.string.err_no_val),Toast.LENGTH_LONG).show();
         }
         else if(Long.parseLong(valor) == 0){
-            Toast.makeText(this,"Insira um valor diferente de zero",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,getString(R.string.err_val_zero),Toast.LENGTH_LONG).show();
         }
         else
         {
@@ -114,24 +115,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String toastText = "";
         switch(transactionFinishedStatus){
             case SUCCESS:{
-                toastText = "Transação Aprovada.";
+                toastText = getString(R.string.trx_approved);
                 break;
             }
             case ERROR:{
-                toastText = "Transação Aprovada.";
+                toastText = getString(R.string.trx_denied);
                 break;
             }
             case DENIED:{
-                toastText = "Erro na transação. Tente novamente.";
+                toastText = getString(R.string.trx_error);
                 break;
             }
             default:{
-                toastText= "Resultado desconhecido.";
+                toastText= getString(R.string.trx_default);
             }
         }
-
         Toast.makeText(this,toastText,Toast.LENGTH_LONG).show();
-
     }
 
     public void saveTransaction()
