@@ -2,4 +2,5 @@
 <resources>
     <dimen name="mainText">16sp</dimen>
     <dimen name="marginTop">8dp</dimen>
+    <dimen name="marginLeft">8dp</dimen>
 </resources>
