@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">hackDemo</string>
+    <string name="nome_produto">Produto</string>
+    <string name="nome_produto_hint">Insira aqui o nome do produto</string>
+    <string name="valor_produto">Insira aqui o valor do produto</string>
+    <string name="valor_produto_hint">Insira aqui o valor do produto</string>
+    <string name="pagar_button">Pagar</string>
+    <string name="login">Código de Estabelecimento</string>
+    <string name="login_hint">Insira aqui seu código de 8 dígitos</string>
+    <string name="login_button">Acessar</string>
+    <string name="menu_report">Relatórios</string>
 </resources>
